@@ -1,0 +1,285 @@
+
+.bolt-container .bolt {
+    --bolt: #f2de10;
+    width: 126px;
+    height: 186px;
+    position: relative;
+  }
+  .bolt-container .bolt svg {
+    position: absolute;
+    display: block;
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+    stroke: var(--bolt);
+  }
+  .bolt-container .bolt svg.circle {
+    left: 7px;
+    top: 100%;
+    width: 112px;
+    height: 44px;
+    stroke-dashoffset: 179px;
+    stroke-dasharray: 0px 178px;
+  }
+  .bolt-container .bolt svg.line {
+    --r: 0deg;
+    top: 95%;
+    width: 70px;
+    height: 3px;
+    stroke-dashoffset: 71px;
+    stroke-dasharray: 0px 70px;
+    transform: rotate(var(--r));
+  }
+  .bolt-container .bolt svg.line.left {
+    --r: 130deg;
+    left: -24px;
+  }
+  .bolt-container .bolt svg.line.right {
+    --r: 40deg;
+    right: -24px;
+  }
+  .bolt-container .bolt svg.white {
+    --r: 0deg;
+    --s: 1;
+    top: 30%;
+    z-index: 1;
+    stroke: #fff;
+    stroke-dashoffset: 241px;
+    stroke-dasharray: 0px 240px;
+    transform: rotate(var(--r)) scaleX(var(--s));
+  }
+  .bolt-container .bolt svg.white.left {
+    --r: -20deg;
+    left: 0;
+  }
+  .bolt-container .bolt svg.white.right {
+    --r: 20deg;
+    --s: -1;
+    right: 0;
+  }
+  .bolt-container .bolt div {
+    display: block;
+    position: relative;
+  }
+  .bolt-container .bolt div:before,
+  .bolt-container .bolt div:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 44%;
+  }
+  .bolt-container .bolt div:before {
+    width: 112px;
+    height: 112px;
+    margin: -56px 0 0 -56px;
+    background: #cdd9ed;
+    filter: blur(124px);
+  }
+  .bolt-container .bolt div:after {
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    background: #fff9bc;
+    z-index: 1;
+    filter: blur(60px);
+  }
+  .bolt-container .bolt div span {
+    display: block;
+    width: 126px;
+    height: 186px;
+    background: var(--bolt);
+    clip-path: polygon(
+      40% 0%,
+      100% 0,
+      65% 40%,
+      88% 40%,
+      8% 100%,
+      36% 50%,
+      0 50%
+    );
+  }
+  .bolt-container .bolt.animate div:before,
+  .bolt-container .bolt.animate div:after {
+    animation: shine 2s ease;
+  }
+  .bolt-container .bolt.animate div span {
+    animation: morph 2s ease;
+  }
+  .bolt-container .bolt.animate svg.circle {
+    animation: circle 0.45s cubic-bezier(0.77, 0, 0.175, 1) forwards 1.3s;
+  }
+  .bolt-container .bolt.animate svg.line {
+    animation: line 0.45s cubic-bezier(0.77, 0, 0.175, 1) forwards 1.3s;
+  }
+  .bolt-container .bolt.animate svg.white {
+    animation: white 0.45s cubic-bezier(0.77, 0, 0.175, 1) forwards 1.45s;
+  }
+  .bolt-container .bolt.animate svg.white.right {
+    animation-delay: 1.6s;
+  }
+  @keyframes circle {
+    100% {
+      stroke-dasharray: 178px 178px;
+    }
+  }
+  @keyframes white {
+    100% {
+      stroke-dasharray: 240px 240px;
+    }
+  }
+  @keyframes line {
+    100% {
+      stroke-dasharray: 70px 70px;
+    }
+  }
+  @keyframes shine {
+    30%,
+    70% {
+      opacity: 0;
+    }
+  }
+  @keyframes morph {
+    12% {
+      clip-path: polygon(
+        40% 5%,
+        100% 0,
+        65% 40%,
+        65% 40%,
+        8% 100%,
+        24% 50%,
+        24% 50%
+      );
+    }
+    24%,
+    72% {
+      clip-path: polygon(
+        36% 40%,
+        82% 40%,
+        82% 40%,
+        82% 40%,
+        36% 71%,
+        36% 40%,
+        36% 40%
+      );
+    }
+    84% {
+      clip-path: polygon(
+        40% 5%,
+        100% 0,
+        65% 40%,
+        65% 40%,
+        8% 100%,
+        24% 50%,
+        24% 50%
+      );
+    }
+  }
+  .bolt-container {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bolt-container * {
+    box-sizing: inherit;
+  }
+  .bolt-container *:before,
+  .bolt-container *:after {
+    box-sizing: inherit;
+  }
+  .bolt-container small {
+    position: absolute;
+    bottom: 32px;
+    font-size: 14px;
+    font-family: Arial;
+    text-align: center;
+    line-height: 19px;
+    color: #6c7486;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .bolt-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0c0f17;
+  }
+  .bolt-container .dribbble {
+    position: fixed;
+    display: block;
+    right: 24px;
+    bottom: 24px;
+  }
+  .bolt-container .dribbble img {
+    display: block;
+    width: 76px;
+  }
+
+/*-----------------------------------------------------------------------------*/
+
+
+.bolt-container {
+    display:flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #272727;
+    font-family: 'Lato', sans-serif
+  }
+  
+  .bolt-container ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .bolt-container ul li {
+    list-style: none;
+    color: #484848;
+    font-size: 80px;
+    letter-spacing: 15px;
+    animation: lighting 1.4s linear infinite;
+  }
+  
+  @keyframes lighting {
+    0% {
+      color: #484848;
+      text-shadow: none;
+    }
+  
+     90% {
+      color: #484848;
+      text-shadow: none;
+    }
+  
+     100% {
+      color: #fff900;
+      text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+    }
+  }
+  
+  .bolt-container ul li:nth-child(1) {
+    animation-delay: 0;
+  }
+  .bolt-container ul li:nth-child(2) {
+    animation-delay: 0s;
+  }
+  .bolt-container ul li:nth-child(3) {
+    animation-delay: 0s;
+  }
+  .bolt-container ul li:nth-child(4) {
+    animation-delay: 0s;
+  }
+  .bolt-container ul li:nth-child(5) {
+    animation-delay: 0s;
+  }
+  .bolt-container ul li:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .bolt-container ul li:nth-child(7) {
+    animation-delay: 0.5s;
+  }
+  .bolt-container ul li:nth-child(8) {
+    animation-delay: 0.5s;
+  }
+  
+  
