@@ -1,10 +1,14 @@
 
 .bolt-container .bolt {
     --bolt: #f2de10;
+    display: flex;
     width: 126px;
     height: 186px;
     position: relative;
+    margin:25px;
+    
   }
+
   .bolt-container .bolt svg {
     position: absolute;
     display: block;
@@ -175,9 +179,29 @@
     }
   }
   .bolt-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-between;
     box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
+
+@media screen and (max-width:700px){
+  .bolt-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-between;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+}
   .bolt-container * {
     box-sizing: inherit;
   }
@@ -185,19 +209,10 @@
   .bolt-container *:after {
     box-sizing: inherit;
   }
-  .bolt-container small {
-    position: absolute;
-    bottom: 32px;
-    font-size: 14px;
-    font-family: Arial;
-    text-align: center;
-    line-height: 19px;
-    color: #6c7486;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+
   .bolt-container {
     min-height: 100vh;
+    min-width:100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -220,6 +235,7 @@
 .bolt-container {
     display:flex;
     height: 100vh;
+    width:100vw;
     justify-content: center;
     align-items: center;
     background-color: #272727;
@@ -235,8 +251,8 @@
   .bolt-container ul li {
     list-style: none;
     color: #484848;
-    font-size: 80px;
-    letter-spacing: 15px;
+    font-size: 10vw;
+    letter-spacing: 10px;
     animation: lighting 1.4s linear infinite;
   }
   
