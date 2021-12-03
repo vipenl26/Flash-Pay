@@ -7,7 +7,7 @@ const Intro = () => {
         runAnimation();      
     });
   return (
-    <div className="bolt-container">
+    <div className="bolt-container overflow-hidden absolute">
     <div className="bolt">
       <svg viewBox="0 0 170 57" className="white left">
         <path
