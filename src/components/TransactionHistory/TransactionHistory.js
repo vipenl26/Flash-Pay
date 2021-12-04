@@ -2,8 +2,7 @@ import React from "react";
 
 const TransactionHistory = () => {
   return (
-
-
+    
 <div className=" bg-gray-900 text-white h-screen flex overflow-hidden text-sm" >
       
       <div className=" flex-grow overflow-hidden h-full flex flex-col" >
@@ -155,7 +154,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Subscription renewal
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $120.00
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -237,7 +236,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Subscription renewal
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $9.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -307,7 +306,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Macbook Pro 13" 
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $1.499.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -339,7 +338,7 @@ const TransactionHistory = () => {
                       <div className=" flex items-center" >
                         <svg
                           viewBox=" 0 0 24 24" 
-                          className=" w-4 mr-5" 
+                          className=" w-4 mr-5 text-green-500" 
                           stroke=" currentColor" 
                           strokeWidth=" 3" 
                           fill=" none" 
@@ -365,7 +364,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Invoice No: 37401
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-green-500" >
                       + $60.00
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -434,7 +433,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Product purchased
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $49.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -504,7 +503,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Subscription renewal
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $5.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -590,7 +589,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       PlayStation 5
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $399.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -622,7 +621,7 @@ const TransactionHistory = () => {
                       <div className=" flex items-center" >
                         <svg
                           viewBox=" 0 0 24 24" 
-                          className=" w-4 mr-5" 
+                          className=" w-4 mr-5 text-green-500" 
                           stroke=" currentColor" 
                           strokeWidth=" 3" 
                           fill=" none" 
@@ -648,7 +647,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Invoice No: 12993
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-green-500" >
                       + $24.00
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -716,7 +715,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Subscription renewal
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $120.00
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -798,7 +797,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Subscription renewal
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $9.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -868,7 +867,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Macbook Pro 13" 
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $1.499.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -900,7 +899,7 @@ const TransactionHistory = () => {
                       <div className=" flex items-center" >
                         <svg
                           viewBox=" 0 0 24 24" 
-                          className=" w-4 mr-5" 
+                          className=" w-4 mr-5 text-green-500" 
                           stroke=" currentColor" 
                           strokeWidth=" 3" 
                           fill=" none" 
@@ -926,7 +925,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Invoice No: 37401
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-green-500" >
                       + $60.00
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -995,7 +994,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Product purchased
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $49.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -1065,7 +1064,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Subscription renewal
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $5.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -1151,7 +1150,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       PlayStation 5
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-red-500" >
                       - $399.99
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -1183,7 +1182,7 @@ const TransactionHistory = () => {
                       <div className=" flex items-center" >
                         <svg
                           viewBox=" 0 0 24 24" 
-                          className=" w-4 mr-5" 
+                          className=" w-4 mr-5 text-green-500" 
                           stroke=" currentColor" 
                           strokeWidth=" 3" 
                           fill=" none" 
@@ -1209,7 +1208,7 @@ const TransactionHistory = () => {
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden" >
                       Invoice No: 12993
                     </td>
-                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
+                    <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-green-500" >
                       + $24.00
                     </td>
                     <td className=" sm:p-3 py-2 px-1 border-b border-gray-800" >
@@ -1283,10 +1282,6 @@ const TransactionHistory = () => {
         </div>
       </div>
     </div>
-
-
-
-
 
 
   );
