@@ -5,6 +5,7 @@ import Footer from './Footer/Footer';
 import Intro from './Intro/Intro'
 import Navbar from './Navbar/Navbar';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
+import PaymentPage from './PaymentPage/PaymentPage';
 const MainComponent = () => {
     const [loadingScreen,setLoadingScreen] = useState(true);
     useEffect(() => {
@@ -19,8 +20,10 @@ const MainComponent = () => {
                 <Navbar/>
                 <Dashboard/>
                 <TransactionHistory/>
+                {/* <PaymentPage/> */}
                 <Footer/>
             </React.Fragment>}
+            
         </React.Fragment>
     )
 }
