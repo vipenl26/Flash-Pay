@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { useEffect ,useState, useCallback} from "react";
 //flex items-center justify-center
 const Dashboard = () => {
@@ -28,9 +29,12 @@ const Dashboard = () => {
       <button className="mb-4 px-4 py-3 my-2 text-sm font-bold rounded no-underline hover:shadow-md bg-blue-600 text-white">
         Add Money
       </button>
-      <button className="align-middle float-right mx-10  px-6 py-4  text-xs sm:text-lg font-bold rounded-full no-underline hover:shadow-lg bg-yellow-400 text-white">
+      <NavLink className="align-middle float-right mx-10  px-6 py-4  text-xs sm:text-lg font-bold rounded-full no-underline hover:shadow-lg bg-yellow-400 text-white"
+          to="/payments" exact
+        >
+        
         Make Payment
-      </button>
+      </NavLink>
     </div>
   );
 };

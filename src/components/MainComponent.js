@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect} from 'react'
 import Dashboard from './Dashboard/Dashboard';
 import Footer from './Footer/Footer';
@@ -12,19 +13,27 @@ const MainComponent = () => {
         setTimeout(()=>{
             setLoadingScreen(false);
         },2800)
+        // window.location="/dashboard";
     }, )
+
     return (
-        <React.Fragment>
+        <Router>
             {loadingScreen && <Intro/>}
-            {!loadingScreen && <React.Fragment>
+            {!loadingScreen &&
+             <React.Fragment>
                 <Navbar/>
-                <Dashboard/>
-                <TransactionHistory/>
-                {/* <PaymentPage/> */}
+                    <Routes>
+                        <Route path="/dashboard" exact element={
+                            <React.Fragment>
+                                <Dashboard/>
+                                <TransactionHistory/>
+                            </React.Fragment>
+                        }/>
+                        <Route path="/payments" element={<PaymentPage/>}/>
+                    </Routes>
                 <Footer/>
             </React.Fragment>}
-            
-        </React.Fragment>
+        </Router>
     )
 }
 

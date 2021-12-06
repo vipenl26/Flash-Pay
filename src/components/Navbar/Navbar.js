@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import {AiFillThunderbolt} from 'react-icons/ai'
 const Navbar = () => {
@@ -58,34 +59,24 @@ const Navbar = () => {
             
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                <NavLink
+                  to="/dashboard"
+                  exact
+                  className={({isActive})=> isActive ? "text-white bg-indigo-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            :"text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"}
                   aria-current="page"
                 >
                   Dashboard
-                </a>
+                </NavLink>
 
-                <a
-                  href="#"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                <NavLink
+                  to="/payments"
+                  exact
+                  className={({isActive})=> isActive ? "text-white bg-indigo-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            :"text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"}
                 >
-                  Team
-                </a>
-
-                <a
-                  href="#"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Projects
-                </a>
-
-                <a
-                  href="#"
-                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Calendar
-                </a>
+                  Payments
+                </NavLink>
               </div>
             </div>
             
