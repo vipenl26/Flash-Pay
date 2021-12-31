@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import {AiFillThunderbolt} from 'react-icons/ai'
-const Navbar = () => {
+const Navbar = (props) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [profileDropDown, setProfileDropDown] = useState(false);
   return (
@@ -148,15 +148,17 @@ const Navbar = () => {
                 >
                   Settings
                 </a>
-                <a
-                  href="#"
+                
+                <button
+                  onClick={() => props.setIsLogin(false)}
+                  style={{width:"100%", textAlign:"left"}}
                   className="block px-4 py-2 text-sm text-gray-700 hover:text-white hover:bg-gray-700"
                   role="menuitem"
                   tabindex="-1"
                   id="user-menu-item-2"
                 >
                   Sign out
-                </a>
+                </button>
               </div>
               }
             </div>
