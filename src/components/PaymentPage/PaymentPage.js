@@ -1,7 +1,27 @@
+import { deepStrictEqual } from "assert";
+import { DESTRUCTION } from "dns";
 import React from "react";
 import { useState } from "react";
 // Card, Microsoft, renewal, -69, 24.12.2020, 07:16 AM
 const transaction = (type, where, description, amount, date, time) => {
+  const OnSubmit=()=>{
+    fetch(`http://localhost:3001/payments/${props.user}`, {
+  method: 'POST',
+  body: {
+    paymentType:"Card",
+    paymentSource:dest.value,
+    paymentDescription:"test",
+    amount:amount.value,
+    dateofTransaction:new date(),
+  }
+})
+.then(response => response.json())
+.then(result => {
+  console.log('Success:', result);
+})
+.catch(error => {
+  console.error('Error:', error);
+});}
   return (
     <tr class=" bg-gray-900">
       <td className=" sm:p-3 py-2 px-1 border-b border-gray-800">
@@ -48,20 +68,8 @@ const transaction = (type, where, description, amount, date, time) => {
     </tr>
   );
 };
-const ls = [
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-  ["Card", "Microsoft", "renewal", 69, "24.12.2020", "07:16 AM"],
-];
+const ls =fetch(`http://localhost:3001/payments/${props.user}`);
+ls=ls.payments;
 
 const PaymentPage = () => {
   const [limit, setLimit] = useState(5)
@@ -75,7 +83,7 @@ const PaymentPage = () => {
           <input
             type="text"
             className="h-14 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none"
-            placeholder="Search anything..."
+            placeholder="Enter Receiptant"
           />
           <div className="absolute top-2 right-2">
             <button className="h-10 w-20 text-white rounded-lg bg-yellow-400 hover:bg-yellow-500">
@@ -84,6 +92,24 @@ const PaymentPage = () => {
           </div>
         </div>
       </div>
+      <div className="container flex justify-center py-11">
+        <div className="relative">
+          <div className="absolute top-4 left-3">
+            <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>{" "}
+          </div>
+          <input
+            type="text"
+            className="h-14 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none"
+            placeholder="Enter Amount"
+          />
+          <div className="absolute top-2 right-2">
+            <button className="h-10 w-40 text-white rounded-lg bg-yellow-400 hover:bg-yellow-500">
+             Make Payment 
+            </button>
+          </div>
+        </div>
+      </div>
+      
 
       <div className="  text-white text-sm">
         <div className=" flex-grow overflow-hidden h-full flex flex-col">

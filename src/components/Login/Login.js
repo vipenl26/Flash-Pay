@@ -1,6 +1,22 @@
 import React from "react";
 
 const Login = (props) => {
+  const OnSubmit=()=>{
+    fetch('http://localhost:3001/login', {
+  method: 'POST',
+  body: {
+    username:email.value,
+    password:password.value
+  }
+})
+.then(response => response.json())
+.then(result => {
+  console.log('Success:', result);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+  }
   return (
     <div>
       <section class="flex justify-center items-center h-screen bg-gray-800">
