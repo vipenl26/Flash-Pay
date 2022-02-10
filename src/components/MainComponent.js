@@ -8,6 +8,7 @@ import Navbar from "./Navbar/Navbar";
 import TransactionHistory from "./TransactionHistory/TransactionHistory";
 import PaymentPage from "./PaymentPage/PaymentPage";
 import Login from "./Login/Login";
+import Signup from "./Signup/Signup";
 const MainComponent = () => {
   const [loadingScreen, setLoadingScreen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
@@ -40,7 +41,11 @@ const MainComponent = () => {
             </Routes>
             <Footer />
           </React.Fragment>:
-          <Login setIsLogin={setIsLogin}/>}
+          <Routes>
+            <Route exact path="/login" element={<Login setIsLogin={setIsLogin}/>}/>
+            <Route exact path="/signup" element={<Signup/>}/>
+          </Routes>
+          }
         </React.Fragment>
       )}
     </Router>
