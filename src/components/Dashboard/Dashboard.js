@@ -31,7 +31,7 @@ const Dashboard = () => {
       return res.json();
     })
     .then(data => {
-      localStorage.setItem("data", data)
+      localStorage.setItem("data", JSON.stringify(data))
       setBalance(data.balance)
     })
     .catch((err)=>{

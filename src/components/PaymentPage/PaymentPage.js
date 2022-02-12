@@ -3,8 +3,7 @@ import { DESTRUCTION } from "dns";
 import React from "react";
 import { useState ,useEffect} from "react";
 // Card, Microsoft, renewal, -69, 24.12.2020, 07:16 AM
-const props = ""
-const dest = {}
+
 const transaction = (type, where, description, amount, date, time) => {
 
   return (
@@ -95,9 +94,14 @@ const transaction = (type, where, description, amount, date, time) => {
     
 
 const PaymentPage = () => {
-  const [limit, setLimit] = useState(5)
+  const [limit, setLimit] = useState(0)
+  const [ls, setLs] = useState([])
   useEffect(()=>{
-    
+    const payments = JSON.parse(localStorage.getItem("data")).payments;
+    //type, where, description, amount, date, time
+    for(let i=0;i<payments.length;i++){
+      ls.push([payments[i].paymentType, payments[i].paymentDestination, payments[i].paymentDescription, payments[i].amount, payments[i].dateOfTransaction, ""]);
+    }
   },[])
   return (
     <div className="">
@@ -161,7 +165,7 @@ const PaymentPage = () => {
                         Date
                       </th>
                     </tr>
-                    {[].map((x) => transaction(...x)).slice(0, limit)}
+                    {ls.map((x) => transaction(...x)).slice(0, limit)}
                   </thead>
                   <tbody className="text-gray-100"></tbody>
                 </table>
