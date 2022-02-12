@@ -8,6 +8,11 @@ const Signup = () => {
         }
 
         const data = {username: username.toString(), password: password.toString(), fullName: fullName.toString(), email: email.toString()}
+        if(data.username.length ==0 || data.email.length==0 || data.email.length==0 || data.fullName.length==0){
+            alert("one or more fields are empty")
+            return;
+        }
+
         const url = 'http://localhost:3001/login'
         fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.

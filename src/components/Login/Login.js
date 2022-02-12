@@ -24,6 +24,7 @@ const Login = (props) => {
   })
   .then(data => {
     alert(data.message)
+    localStorage.setItem("userid", data.userid)
   })
   .catch((err)=>{
     
