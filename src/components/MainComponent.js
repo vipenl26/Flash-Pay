@@ -11,7 +11,7 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 const MainComponent = () => {
   const [loadingScreen, setLoadingScreen] = useState(true);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(localStorage.getItem("userid")!=null);
   useEffect(() => {
     setTimeout(() => {
       setLoadingScreen(false);
