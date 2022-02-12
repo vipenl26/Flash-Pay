@@ -150,7 +150,7 @@ const Navbar = (props) => {
                 </a>
                 
                 <button
-                  onClick={() => {props.setIsLogin(false);localStorage.removeItem("userid")}}
+                  onClick={() => {props.setIsLogin(false);localStorage.clear();}}
                   style={{width:"100%", textAlign:"left"}}
                   className="block px-4 py-2 text-sm text-gray-700 hover:text-white hover:bg-gray-700"
                   role="menuitem"
