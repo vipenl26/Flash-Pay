@@ -53,13 +53,13 @@ const transaction = (type, where, description, amount, date, time) => {
     </tr>
   );
 };
-const ls =fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")}`);
+// const ls =fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")}`);
 // console.log(ls[0])
 // ls=ls.payments
   const SendMoney=(dest,amount)=>{
 
-
-    fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")}`, {
+    const url = `http://localhost:3001/payments`;
+    fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -71,20 +71,19 @@ const ls =fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body:  JSON.stringify({
-        "paymentType":"Card",
-        "paymentSource":localStorage.getItem("userid"),
-        "paymentDestination":dest,
-        "paymentDescription":"test",
-        "amount":amount,
-        "dateOfTransaction":"date",
+        paymentType:"Card",
+        paymentSource:localStorage.getItem("userid"),
+        paymentDestination:dest,
+        paymentDescription:"test",
+        amount:amount,
+        dateOfTransaction:"date",
       }) // body data type must match "Content-Type" header
     })
     .then((res)=>{
-      // res.send("great success")
-      // return res.json();
+      return res.json()
     })
     .then(data => {
-      
+        alert(data.message);
     })
     .catch((err)=>{
       console.log(err)
