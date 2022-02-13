@@ -108,6 +108,7 @@ const PaymentPage = () => {
       ls.push([payments[i].paymentType, payments[i].paymentDestination, payments[i].paymentDescription, payments[i].amount, payments[i].dateOfTransaction, ""]);
     }
     ls.reverse();
+    setLimit(5)
   },[])
   return (
     <div className="">

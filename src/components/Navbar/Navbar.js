@@ -77,6 +77,14 @@ const Navbar = (props) => {
                 >
                   Payments
                 </NavLink>
+                <NavLink
+                  to="/AddMoney"
+                  exact
+                  className={({isActive})=> isActive ? "text-white bg-indigo-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            :"text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"}
+                >
+                  Add Money
+                </NavLink>
               </div>
             </div>
             
