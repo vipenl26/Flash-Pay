@@ -3,8 +3,7 @@ import { DESTRUCTION } from "dns";
 import React from "react";
 import { useState ,useEffect} from "react";
 // Card, Microsoft, renewal, -69, 24.12.2020, 07:16 AM
-const props = ""
-const dest = {}
+
 const transaction = (type, where, description, amount, date, time) => {
 
   return (
@@ -53,13 +52,13 @@ const transaction = (type, where, description, amount, date, time) => {
     </tr>
   );
 };
-const ls =fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")}`);
+// const ls =fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")}`);
 // console.log(ls[0])
 // ls=ls.payments
   const SendMoney=(dest,amount)=>{
 
-
-    fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")}`, {
+    const url = `http://localhost:3001/payments`;
+    fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -71,20 +70,19 @@ const ls =fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body:  JSON.stringify({
-        "paymentType":"Card",
-        "paymentSource":localStorage.getItem("userid"),
-        "paymentDestination":dest,
-        "paymentDescription":"test",
-        "amount":amount,
-        "dateOfTransaction":"date",
+        paymentType:"Card",
+        paymentSource:localStorage.getItem("userid"),
+        paymentDestination:dest,
+        paymentDescription:"test",
+        amount:amount,
+        dateOfTransaction:"date",
       }) // body data type must match "Content-Type" header
     })
     .then((res)=>{
-      // res.send("great success")
-      // return res.json();
+      return res.json()
     })
     .then(data => {
-      
+        alert(data.message);
     })
     .catch((err)=>{
       console.log(err)
@@ -96,9 +94,14 @@ const ls =fetch(`http://localhost:3001/payments/${localStorage.getItem("userid")
     
 
 const PaymentPage = () => {
-  const [limit, setLimit] = useState(5)
+  const [limit, setLimit] = useState(0)
+  const [ls, setLs] = useState([])
   useEffect(()=>{
-    
+    const payments = JSON.parse(localStorage.getItem("data")).payments;
+    //type, where, description, amount, date, time
+    for(let i=0;i<payments.length;i++){
+      ls.push([payments[i].paymentType, payments[i].paymentDestination, payments[i].paymentDescription, payments[i].amount, payments[i].dateOfTransaction, ""]);
+    }
   },[])
   return (
     <div className="">
@@ -162,7 +165,7 @@ const PaymentPage = () => {
                         Date
                       </th>
                     </tr>
-                    {[].map((x) => transaction(...x)).slice(0, limit)}
+                    {ls.map((x) => transaction(...x)).slice(0, limit)}
                   </thead>
                   <tbody className="text-gray-100"></tbody>
                 </table>
