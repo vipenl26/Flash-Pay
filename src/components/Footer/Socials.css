@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+    --bg: #dcdde1;     
+    --footer-icon: #fff;  
+    --social-icon1: #e4405f;
+    --social-icon2: #3b5999;
+    --social-icon3: #87CEFA;
+ 
+    --social-icon4: black;  
+  }
+  
+
+
+  
+  .icon-item {
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+  
+  .icon-link {  
+    display: inline-flex;
+    font-size: 1.7rem;  
+    text-decoration: none;  
+    color: var(--footer-icon);
+    width: 3rem;
+    height:3rem;   
+    transition: .3s linear;
+    position: relative;
+    z-index: 1;
+    margin: auto
+  }
+  
+  .icon-link:hover {
+    color: #fff;
+  }
+  
+  .icon-link i {
+    margin: auto;    
+  }
+  
+  .icon-link::before {  
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #000;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
+  }
+    
+  .icon-link:hover::before {  
+    transform: scale(1);
+  }
+  
+  .icon-item:nth-child(1) a:hover:before { 
+    background: var(--social-icon1); 
+  }
+  
+  .icon-item:nth-child(2) a:hover:before { 
+    background: var(--social-icon2); 
+  }
+  
+  .icon-item:nth-child(3) a:hover:before { 
+    background: var(--social-icon3); 
+  }
+  
+  .icon-item:nth-child(4) a:hover:before { 
+    background: var(--social-icon4); 
+  }
+  
