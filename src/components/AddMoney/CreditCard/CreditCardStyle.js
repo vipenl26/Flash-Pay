@@ -23,7 +23,7 @@ export const CardContainer=styled.div`
     height:250px;
     width:450px;
     position: absolute;
-    top: -150px;
+    top: -140px;
     left: 30px;
     right: 50px;
     background:url(${BgImage});

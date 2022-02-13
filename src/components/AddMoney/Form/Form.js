@@ -40,7 +40,7 @@ function Form() {
 
                 </Details>
            
-                <MakePayments amount={values.Amount}></MakePayments>
+                <MakePayments values={values}></MakePayments>
             </FormWrapper>
         </FormContainer>        
     )
