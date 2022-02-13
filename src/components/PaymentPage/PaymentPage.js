@@ -5,7 +5,9 @@ import { useState ,useEffect} from "react";
 // Card, Microsoft, renewal, -69, 24.12.2020, 07:16 AM
 
 const transaction = (type, where, description, amount, date, time) => {
-
+  date = date.toString().replace("T", "  ")
+  date = date.replace("Z", " ")
+  
   return (
     <tr class=" bg-gray-900">
       <td className=" sm:p-3 py-2 px-1 border-b border-gray-800">
@@ -15,7 +17,7 @@ const transaction = (type, where, description, amount, date, time) => {
         <div className=" flex items-center">{where}</div>
       </td>
       <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 md:table-cell hidden">
-        Subscription renewal
+        {description}
       </td>
       {amount >= 0 ? (
         <td className=" sm:p-3 py-2 px-1 border-b border-gray-800 text-green-500">
@@ -56,6 +58,10 @@ const transaction = (type, where, description, amount, date, time) => {
 // console.log(ls[0])
 // ls=ls.payments
   const SendMoney=(dest,amount)=>{
+    if(amount < 0 || isNaN(amount)){
+      alert("enter valid amount")
+      return
+    }
 
     const url = `http://localhost:3001/payments`;
     fetch(url, {
@@ -70,12 +76,11 @@ const transaction = (type, where, description, amount, date, time) => {
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body:  JSON.stringify({
-        paymentType:"Card",
+        paymentType:"online Flash Pay",
         paymentSource:localStorage.getItem("userid"),
         paymentDestination:dest,
-        paymentDescription:"test",
+        paymentDescription:"payment testing",
         amount:amount,
-        dateOfTransaction:"date",
       }) // body data type must match "Content-Type" header
     })
     .then((res)=>{
@@ -102,6 +107,7 @@ const PaymentPage = () => {
     for(let i=0;i<payments.length;i++){
       ls.push([payments[i].paymentType, payments[i].paymentDestination, payments[i].paymentDescription, payments[i].amount, payments[i].dateOfTransaction, ""]);
     }
+    ls.reverse();
   },[])
   return (
     <div className="">

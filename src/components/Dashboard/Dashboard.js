@@ -7,11 +7,14 @@ const Dashboard = () => {
   const [balance, setBalance] = useState(0);
   const loopBalance = useCallback(() => {
     const amount = balance;
-    for (let i = 0; i <= amount; i++) {
+    for (let i = 0,j=0; i <= amount; i+=amount/100,j++) {
       setTimeout(() => {
         setBalance(i);
-      }, i * 3);
+      }, j* 6);
     }
+    setTimeout(() => {
+      setBalance(amount);
+    }, 200* 6);
   });
   useEffect(() => {
     const url = "http://localhost:3001/getdata";
@@ -40,7 +43,7 @@ const Dashboard = () => {
     })
 
     return ()=>{
-      loopBalance()
+      // loopBalance()
     }
   }, []);
 
