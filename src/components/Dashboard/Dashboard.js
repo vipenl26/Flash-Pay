@@ -7,11 +7,14 @@ const Dashboard = () => {
   const [balance, setBalance] = useState(0);
   const loopBalance = useCallback(() => {
     const amount = balance;
-    for (let i = 0; i <= amount; i++) {
+    for (let i = 0,j=0; i <= amount; i+=amount/100,j++) {
       setTimeout(() => {
         setBalance(i);
-      }, i * 3);
+      }, j* 6);
     }
+    setTimeout(() => {
+      setBalance(amount);
+    }, 200* 6);
   });
   useEffect(() => {
     const url = "http://localhost:3001/getdata";
@@ -40,7 +43,7 @@ const Dashboard = () => {
     })
 
     return ()=>{
-      loopBalance()
+      // loopBalance()
     }
   }, []);
 
@@ -60,7 +63,7 @@ const Dashboard = () => {
         </div>
       </div>
       <button  className="mb-4 px-4 py-3 my-2 text-sm font-bold rounded no-underline hover:shadow-md bg-blue-600 text-white">
-       <a href="/AddMoney">Add Money</a>
+       <NavLink to="/AddMoney">Add Money</NavLink>
       </button>
       <NavLink
         className="align-middle float-right mx-10  px-6 py-4  text-xs sm:text-lg font-bold rounded-full no-underline hover:shadow-lg bg-yellow-400 text-white"
