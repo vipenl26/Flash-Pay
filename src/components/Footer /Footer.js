@@ -39,22 +39,22 @@ function Footer() {
                     <ul class="list-unstyled SocialCol ">
 
 <li class="icon-item">
-<a href="#" class="icon-link"><FaInstagram></FaInstagram></a>
+<a href="https://instagram.com" class="icon-link"><FaInstagram></FaInstagram></a>
 </li>
 <li class="icon-item">
-<a href="#" class="icon-link"><FaFacebook></FaFacebook></a>
+<a href="https://facebook.com" class="icon-link"><FaFacebook></FaFacebook></a>
     </li>
 <li class="icon-item">
-<a href="#" class="icon-link"><FaTwitter></FaTwitter></a>
+<a href="https://twitter.com" class="icon-link"><FaTwitter></FaTwitter></a>
 </li>
 
 <li class="icon-item">
-<a href="#" class="icon-link"><FaGithub></FaGithub></a>
+<a href="https://github.com" class="icon-link"><FaGithub></FaGithub></a>
 </li>    
 </ul>
 
             
-          <p>&copy;2021 vipenl26 | All Rights Reserved</p>
+          <p>&copy;2022 NGIT | All Rights Reserved</p>
         </div>
       </footer>
     </div>

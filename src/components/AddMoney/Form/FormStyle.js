@@ -13,6 +13,7 @@ export const FormContainer=styled.div`
     margin-top:300px;
     margin-left:auto;
     margin-right: auto;
+    margin-bottom: 100px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     `
 export const FormWrapper=styled.div`

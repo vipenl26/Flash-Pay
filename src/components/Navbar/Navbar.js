@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import {AiFillThunderbolt} from 'react-icons/ai'
+import { ProfileIcon } from "./NavbarStyle";
 const Navbar = (props) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [profileDropDown, setProfileDropDown] = useState(false);
@@ -91,7 +92,7 @@ const Navbar = (props) => {
           </div>
           
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button
+            {/* <button
               type="button"
               className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
             >
@@ -111,7 +112,7 @@ const Navbar = (props) => {
                   d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
                 />
               </svg>
-            </button>
+            </button> */}
 
             <div className="ml-3 relative">
               <div>
@@ -124,12 +125,9 @@ const Navbar = (props) => {
                   onClick = {()=>{setProfileDropDown(!profileDropDown)}}
                 >
                   <span className="sr-only">Open user menu</span>
-                  <img
-                    className="h-8 w-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
                 </button>
+                <ProfileIcon onClick = {()=>{setProfileDropDown(!profileDropDown)}} >{JSON.parse(localStorage.getItem("data")).username[0].toUpperCase()}</ProfileIcon>
+
               </div>
               {profileDropDown && <div
                 className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
@@ -146,17 +144,7 @@ const Navbar = (props) => {
                   id="user-menu-item-0"
                 >
                   Your Profile
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:text-white hover:bg-gray-700"
-                  role="menuitem"
-                  tabindex="-1"
-                  id="user-menu-item-1"
-                >
-                  Settings
-                </a>
-                
+                </a>              
                 <button
                   onClick={() => {props.setIsLogin(false);localStorage.clear();}}
                   style={{width:"100%", textAlign:"left"}}
@@ -177,7 +165,7 @@ const Navbar = (props) => {
       <div className="sm:hidden" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
           <a
-            href="#"
+            href="/dashboard"
             className=" text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             aria-current="page"
           >
@@ -185,25 +173,20 @@ const Navbar = (props) => {
           </a>
 
           <a
-            href="#"
+            href="/payments"
             className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
-            Team
+            Payments
           </a>
 
           <a
-            href="#"
+            href="/addMoney"
             className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
-            Projects
+            Add Money
           </a>
 
-          <a
-            href="#"
-            className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Calendar
-          </a>
+          
         </div>
       </div>
       }
