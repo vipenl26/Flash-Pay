@@ -9,7 +9,7 @@ const Dashboard = () => {
     const amount = balance;
     for (let i = 0,j=0; i <= amount; i+=amount/100,j++) {
       setTimeout(() => {
-        setBalance(i);
+        setBalance(parseInt(i));
       }, j* 6);
     }
     setTimeout(() => {
