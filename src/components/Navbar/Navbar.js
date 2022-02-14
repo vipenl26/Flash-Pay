@@ -115,17 +115,7 @@ const Navbar = (props) => {
             </button> */}
 
             <div className="ml-3 relative">
-              <div>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                  id="user-menu-button"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  onClick = {()=>{setProfileDropDown(!profileDropDown)}}
-                >
-                  <span className="sr-only">Open user menu</span>
-                </button>
+              <div> 
                 <ProfileIcon onClick = {()=>{setProfileDropDown(!profileDropDown)}} >{JSON.parse(localStorage.getItem("data")).username[0].toUpperCase()}</ProfileIcon>
 
               </div>
