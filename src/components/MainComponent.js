@@ -10,6 +10,7 @@ import PaymentPage from "./PaymentPage/PaymentPage";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import Form from "./AddMoney/Form/Form";
+import Profile from "./Profile/Profile"
 const MainComponent = () => {
   const [loadingScreen, setLoadingScreen] = useState(true);
   const [isLogin, setIsLogin] = useState(localStorage.getItem("userid")!=null);
@@ -41,6 +42,7 @@ const MainComponent = () => {
               <Route path="/payments" element={<PaymentPage />} />
               <Route path="*" element={<Navigate replace to="/dashboard" />} />
               <Route path="/AddMoney"  element={<Form/>}/>
+              <Route path="/Profile" element={<Profile></Profile>}/>
             </Routes>
             <Footer />
           </React.Fragment>:
