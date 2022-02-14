@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Dashboard from "./Dashboard/Dashboard";
-import Footer from "./Footer/Footer";
+import Footer from "./Footer /Footer";
 import Intro from "./Intro/Intro";
 import Navbar from "./Navbar/Navbar";
 import TransactionHistory from "./TransactionHistory/TransactionHistory";
