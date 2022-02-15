@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
 import Form from "../AddMoney/Form/Form";
 //flex items-center justify-center
-const Dashboard = () => {
+const Dashboard = (props) => {
   const [balance, setBalance] = useState(0);
   const loopBalance = useCallback(() => {
     const amount = balance;
@@ -37,6 +37,7 @@ const Dashboard = () => {
     .then(data => {
       localStorage.setItem("data", JSON.stringify(data))
       setBalance(data.balance)
+      props.setUsername(data.username)
     })
     .catch((err)=>{
       

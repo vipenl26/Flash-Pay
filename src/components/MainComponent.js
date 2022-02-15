@@ -14,6 +14,7 @@ import Profile from "./Profile/Profile"
 const MainComponent = () => {
   const [loadingScreen, setLoadingScreen] = useState(true);
   const [isLogin, setIsLogin] = useState(localStorage.getItem("userid")!=null);
+  const [username, setUsername] = useState("X");
   useEffect(() => {
     setTimeout(() => {
       setLoadingScreen(false);
@@ -27,15 +28,15 @@ const MainComponent = () => {
       {!loadingScreen && (
         <React.Fragment>
           {isLogin?<React.Fragment>
-            <Navbar setIsLogin={setIsLogin} />
+            <Navbar setIsLogin={setIsLogin} username={username}/>
             <Routes>
               <Route
                 path="/dashboard"
                 exact
                 element={
                   <React.Fragment>
-                    <Dashboard />
-                    <TransactionHistory />
+                    <Dashboard setUsername={setUsername}/>
+                    {/* <TransactionHistory /> */}
                   </React.Fragment>
                 }
               />
