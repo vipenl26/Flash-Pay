@@ -19,7 +19,12 @@ const Login = (props) => {
     body: JSON.stringify(data) // body data type must match "Content-Type" header
   })
   .then((res)=>{
-    if(res.status==200)props.setIsLogin(true)
+    if(res.status==200){
+      setTimeout(()=>{
+        props.setIsLogin(true)
+      },500)
+      
+    }
     return res.json();
   })
   .then(data => {
@@ -61,7 +66,7 @@ const Login = (props) => {
           <div>
             <input
               className="w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600"
-              type="text"
+              type="password"
               placeholder="Password"
               id="password"
             />

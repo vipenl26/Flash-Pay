@@ -41,9 +41,9 @@ const MainComponent = () => {
                 }
               />
               <Route path="/payments" element={<PaymentPage />} />
-              <Route path="*" element={<Navigate replace to="/dashboard" />} />
               <Route path="/AddMoney"  element={<Form/>}/>
               <Route path="/Profile" element={<Profile></Profile>}/>
+              <Route path="*" element={<Navigate replace to="/dashboard" />} />
             </Routes>
             <Footer />
           </React.Fragment>:
