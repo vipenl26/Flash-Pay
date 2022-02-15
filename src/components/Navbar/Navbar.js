@@ -116,7 +116,7 @@ const Navbar = (props) => {
 
             <div className="ml-3 relative">
               <div> 
-                <ProfileIcon onClick = {()=>{setProfileDropDown(!profileDropDown)}} >{props.username[0].toUpperCase()}</ProfileIcon>
+                <ProfileIcon onClick = {()=>{setProfileDropDown(!profileDropDown)}} >{"x"}</ProfileIcon>
 
               </div>
               {profileDropDown && <div

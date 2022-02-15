@@ -12,7 +12,7 @@ function CreditCard(props) {
                     </CardType>
                 <DetailContainer>
                     <DetailName >Card Number</DetailName>
-                    <Detail size="1.8rem">{props.values.CardNumber}</Detail>
+                    <Detail size="1.4rem">{props.values.CardNumber}</Detail>
                 </DetailContainer>
                     
                 <CardDetails>

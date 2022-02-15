@@ -20,8 +20,8 @@ export const Background=styled.div`
 
 export const CardContainer=styled.div`
     display:flex;
-    height:250px;
-    width:450px;
+    height:260px;
+    width:460px;
     position: absolute;
     top: -140px;
     left: 30px;
@@ -64,13 +64,14 @@ export const CardDetails=styled.div`
     flex-direction:row;
     align-items: stretch;
     justify-content:space-between;
-    margin-top:30px;`
+    margin-top:20px;`
 
 
 export const DetailContainer=styled.div`
     display:flex;
     flex-direction:column;
-    justify-content:space-between;`
+    justify-content:space-between;
+    `
 
 export const DetailName=styled.div`
             font-weight: 200;
