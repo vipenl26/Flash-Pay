@@ -90,8 +90,8 @@ const Login = (props) => {
               </label>
             </div>
             <div>
-              <a className="text-sm text-blue-600 hover:underline" href="#">
-                Forgot password?
+              <a className="text-sm text-blue-600 hover:underline" href="/signup">
+                New User (Register)
               </a>
             </div>
           </div>
