@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 const Signup = () => {
     const createUser = async(username, password, password1, fullName, email) => {
@@ -98,9 +99,9 @@ const Signup = () => {
 
                 <div className="text-white mt-6">
                     Already have an account? 
-                    <a className="no-underline border-b border-blue text-blue" href="/login">
+                    <NavLink className="no-underline border-b border-blue text-blue" to="/login">
                         Log in
-                    </a>.
+                    </NavLink>.
                 </div>
             </div>
         </div>

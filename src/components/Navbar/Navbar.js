@@ -126,15 +126,15 @@ const Navbar = (props) => {
                 aria-labelledby="user-menu-button"
                 tabindex="-1"
               >
-                <a
-                  href="/Profile"
+                <NavLink
+                  to="/Profile"
                   className="block px-4 py-2 text-sm text-gray-700 hover:text-white hover:bg-gray-700"
                   role="menuitem"
                   tabindex="-1"
                   id="user-menu-item-0"
                 >
                   Your Profile
-                </a>              
+                </NavLink>              
                 <button
                   onClick={() => {props.setIsLogin(false);localStorage.clear();}}
                   style={{width:"100%", textAlign:"left"}}
@@ -154,27 +154,27 @@ const Navbar = (props) => {
       {mobileMenu &&
       <div className="sm:hidden" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <a
-            href="/dashboard"
+          <NavLink
+            to="/dashboard"
             className=" text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             aria-current="page"
           >
             Dashboard
-          </a>
+          </NavLink>
 
-          <a
-            href="/payments"
+          <NavLink
+            to="/payments"
             className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Payments
-          </a>
+          </NavLink>
 
-          <a
-            href="/addMoney"
+          <NavLink
+            to="/addMoney"
             className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Add Money
-          </a>
+          </NavLink>
 
           
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Login = (props) => {
   async function Authenticate(x, y) {
@@ -90,9 +91,9 @@ const Login = (props) => {
               </label>
             </div>
             <div>
-              <a className="text-sm text-blue-600 hover:underline" href="/signup">
+              <NavLink className="text-sm text-blue-600 hover:underline" to="/signup">
                 New User (Register)
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
