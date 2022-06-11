@@ -7,45 +7,46 @@ const Dashboard = (props) => {
   const [balance, setBalance] = useState(0);
   const loopBalance = useCallback(() => {
     const amount = balance;
-    for (let i = 0,j=0; i <= amount; i+=amount/100,j++) {
+    let last = 0;
+    let interval = 30;
+    for (let i = 1, j = 0; i <= amount; i = 2 * i, j++) {
       setTimeout(() => {
         setBalance(parseInt(i));
-      }, j* 6);
+      }, (last = last + interval));
     }
     setTimeout(() => {
       setBalance(amount);
-    }, 200* 6);
+    }, (last = last + interval));
   });
   useEffect(() => {
-    const url = (process.env.REACT_APP_BACKEND || "http://localhost:3001") + "/getdata";
+    const url =
+      (process.env.REACT_APP_BACKEND || "http://localhost:3001") + "/getdata";
     fetch(url, {
-      method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
+      method: "PUT", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify({"userid": localStorage.getItem("userid")}) // body data type must match "Content-Type" header
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify({ userid: localStorage.getItem("userid") }), // body data type must match "Content-Type" header
     })
-    .then((res)=>{
-      return res.json();
-    })
-    .then(data => {
-      localStorage.setItem("data", JSON.stringify(data))
-      setBalance(data.balance)
-      props.setUsername(data.username)
-    })
-    .catch((err)=>{
-      
-    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        localStorage.setItem("data", JSON.stringify(data));
+        setBalance(data.balance);
+        props.setUsername(data.username);
+      })
+      .catch((err) => {});
 
-    return ()=>{
+    return () => {
       // loopBalance()
-    }
+    };
   }, []);
 
   return (
@@ -63,8 +64,8 @@ const Dashboard = (props) => {
           </div>
         </div>
       </div>
-      <button  className="mb-4 px-4 py-3 my-2 text-sm font-bold rounded no-underline hover:shadow-md bg-blue-600 text-white">
-       <NavLink to="/AddMoney">Add Money</NavLink>
+      <button className="mb-4 px-4 py-3 my-2 text-sm font-bold rounded no-underline hover:shadow-md bg-blue-600 text-white">
+        <NavLink to="/AddMoney">Add Money</NavLink>
       </button>
       <NavLink
         className="align-middle float-right mx-10  px-6 py-4  text-xs sm:text-lg font-bold rounded-full no-underline hover:shadow-lg bg-yellow-400 text-white"
