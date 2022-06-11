@@ -12,7 +12,7 @@ function MakePayments(props) {
   const[values,setValues]=useState(props.values)
 
   const Payment=(values)=>{
-    const url = "http://localhost:3001/AddMoney"
+    const url = (process.env.REACT_APP_BACKEND || "http://localhost:3001") + "/AddMoney"
     const data = {
         userid: localStorage.getItem("userid"),
         cardNumber:values.CardNumber,

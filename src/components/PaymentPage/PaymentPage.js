@@ -73,7 +73,7 @@ const transaction = (type, where, description, amount, date, time) => {
       return
     }
 
-    const url = `http://localhost:3001/payments`;
+    const url = (process.env.REACT_APP_BACKEND || "http://localhost:3001") + `/payments`;
     fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin

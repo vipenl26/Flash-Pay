@@ -2,7 +2,7 @@ import React from "react";
 
 const Login = (props) => {
   async function Authenticate(x, y) {
-  const url = 'http://localhost:3001/login'
+  const url = (process.env.REACT_APP_BACKEND || "http://localhost:3001") + '/login'
   const data = {username:x.toString(), password:y.toString()}
   // Default options are marked with *
   fetch(url, {

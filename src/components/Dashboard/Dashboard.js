@@ -17,7 +17,7 @@ const Dashboard = (props) => {
     }, 200* 6);
   });
   useEffect(() => {
-    const url = "http://localhost:3001/getdata";
+    const url = (process.env.REACT_APP_BACKEND || "http://localhost:3001") + "/getdata";
     fetch(url, {
       method: 'PUT', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin

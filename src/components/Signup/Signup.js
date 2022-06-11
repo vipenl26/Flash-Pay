@@ -13,7 +13,7 @@ const Signup = () => {
             return;
         }
 
-        const url = 'http://localhost:3001/login'
+        const url = (process.env.REACT_APP_BACKEND || "http://localhost:3001") + '/login'
         fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
