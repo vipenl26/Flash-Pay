@@ -1,3 +1,19 @@
+## Brief Overview about the application.
+
+Flash-Pay is a payment application which is built using MERN stack.
+The application is mainly used for instant and rudimentry payments.
+The application is designed to oversimplify transaction processes.
+
+## Frontend link
+
+https://main--flash-pay.netlify.app/
+
+## Backend Link
+
+https://flash-pay-backend.herokuapp.com/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
