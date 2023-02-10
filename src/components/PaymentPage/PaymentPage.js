@@ -10,7 +10,33 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
 
-
+const doesUserExist = (userName) => {
+  const url = (process.env.REACT_APP_BACKEND || "http://localhost:3001") + '/verifyUser'
+  fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify({username: userName}) // body data type must match "Content-Type" header
+  })
+  .then((res)=>{
+    if (res.status==200) {
+      alert("User found")
+    }
+    else {
+      alert("User not found")
+    }
+  })
+  .catch((err)=>{
+    
+  })
+}
 
 const transaction = (type, where, description, amount, date, time) => {
   date = date.toString().replace("T", "  ")
@@ -210,7 +236,7 @@ const PaymentPage = () => {
 
 
 
-
+  
 
 
 
@@ -244,7 +270,7 @@ const PaymentPage = () => {
             placeholder="Enter Receiptant" id="dest" name="dest" onChange={setDetails}
           />
           <div className="absolute top-2 right-2">
-            <button className="h-10 w-20 text-white rounded-lg bg-yellow-400 hover:bg-yellow-500">
+            <button className="h-10 w-20 text-white rounded-lg bg-yellow-400 hover:bg-yellow-500" onClick={() => doesUserExist(MoneyDetails.dest)}>
               Search
             </button>
           </div>
